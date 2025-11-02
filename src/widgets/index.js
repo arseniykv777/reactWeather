@@ -1,0 +1,1 @@
+export { default as HeaderPage } from '@/widgets/header-page/ui/HeaderPage.jsx';

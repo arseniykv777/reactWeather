@@ -1,0 +1,23 @@
+.header_page {
+  border-radius: 16px;
+  background: rgba(0, 97, 255, .3);
+  padding: 1.5rem 0;
+}
+
+.header_content {
+  max-width: 1440px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+
+  div {
+    display: flex;
+    gap: 1rem;
+  }
+
+  a, input {
+    line-height: normal;
+    border-radius: 16px;
+  }
+}
