@@ -1,7 +1,8 @@
 .header_page {
-  border-radius: 16px;
   background: rgba(0, 97, 255, .3);
   padding: 1.5rem 0;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
 .header_content {

@@ -1,4 +1,4 @@
-import { SearchBar, CurrentWeatherBtn, FiveDayForecast } from '@/features'
+import { SearchBar, CurrentWeatherBtn, FiveDayForecastBtn } from '@/features'
 import styles from './HeaderPage.module.scss';
 
 const HeaderPage = () => (
@@ -7,7 +7,7 @@ const HeaderPage = () => (
       <SearchBar />
       <div>
         <CurrentWeatherBtn />
-        <FiveDayForecast />
+        <FiveDayForecastBtn />
       </div>
     </div>
   </header>

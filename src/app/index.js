@@ -1,1 +1,1 @@
-export { default as AppRouter } from '@/app/provider/Router/ui/AppRouter';
+export { default } from './App';

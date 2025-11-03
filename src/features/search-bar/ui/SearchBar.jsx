@@ -1,7 +1,15 @@
 import './SearchBar.scss'
+import useSearchInput from '../model/useSearchInput.js';
 
-const SearchBar = () => (
-  <input type="text" placeholder={'Поиск местоположения'} className={'search-bar-input'} />
-)
+const SearchBar = () => {
+  const handleChange = useSearchInput();
+
+  return (
+    <input type="text"
+           placeholder={'Поиск местоположения'}
+           className={'search-bar-input'}
+           onChange={handleChange}/>
+  )
+}
 
 export default SearchBar;

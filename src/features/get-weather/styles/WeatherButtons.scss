@@ -5,4 +5,9 @@
   font-weight: 500;
   padding: .5rem 2rem;
   text-transform: lowercase;
+  transition: background-color .3s;
+
+  &.active {
+    background-color: rgba(0, 81, 255, 1);
+  }
 }
