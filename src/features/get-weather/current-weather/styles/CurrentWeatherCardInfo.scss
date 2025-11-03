@@ -1,0 +1,10 @@
+.card_info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card_info p {
+  font-weight: 400;
+  font-size: 36px;
+}

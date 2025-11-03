@@ -8,7 +8,7 @@ const SearchBar = () => {
     <input type="text"
            placeholder={'Поиск местоположения'}
            className={'search-bar-input'}
-           onChange={handleChange}/>
+           onKeyDown={handleChange}/>
   )
 }
 

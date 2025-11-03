@@ -6,11 +6,13 @@ const useSearchInput = () => {
   const timeoutRef = useRef(null);
 
   return e => {
-    const value = e.target.value;
-    clearTimeout(timeoutRef.current);
-    timeoutRef.current = setTimeout(() => {
-      navigate(`/current/${value}`);
-    }, 300)
+    if (e.key === "Enter") {
+      const value = e.target.value;
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        navigate(`/current/${value}`);
+      }, 300)
+    }
   };
 }
 

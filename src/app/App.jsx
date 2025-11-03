@@ -6,7 +6,9 @@ const App = () => {
   return (
     <>
       <HeaderPage />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </>
   )
 }

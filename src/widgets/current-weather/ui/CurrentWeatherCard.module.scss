@@ -1,0 +1,16 @@
+.card {
+  width: 100%;
+  border: black 1px solid;
+  border-radius: 70px;
+  padding-inline: 3rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  margin: 1.5rem 0;
+  font-size: 34px;
+  font-weight: 400;
+}

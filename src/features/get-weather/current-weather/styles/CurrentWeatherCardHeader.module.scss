@@ -1,0 +1,28 @@
+.card_header {
+  display: flex;
+  gap: 1rem;
+
+  .img_block {
+    width: 120px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.temp {
+  font-size: 72px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.feels_like {
+  font-weight: 300;
+  font-size: 28px;
+  opacity: .6;
+}
+
+.info {
+  margin-top: 1rem;
+}
