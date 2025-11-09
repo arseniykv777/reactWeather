@@ -1,31 +1,25 @@
-import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import { currentWeatherApi } from "../index.js";
-import { fetchLocalNameApi } from "@/features";
 
-const useCurrentWeather = () => {
-  const params = useParams();
-  const [data, setData] = useState();
+const useCurrentWeather = (city) => {
+  const [data, setData] = useState(null);
 
+  console.log(1)
   useEffect(() => {
-    if (!params.q) return
-
+    if (!city) return
+    console.log(2)
     const fetchData = async () => {
+      setData(null)
       try {
-        const weather = await currentWeatherApi(params.q)
-        const city = await fetchLocalNameApi(weather.name)
-
-        setData({
-          ...weather,
-          city
-        })
+        const weather = await currentWeatherApi(city)
+        setData(weather)
       } catch (err) {
         console.error(err)
       }
     }
 
     fetchData().then(r => (r))
-  }, [params.q])
+  }, [city])
 
   return data;
 }
