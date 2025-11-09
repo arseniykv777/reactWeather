@@ -20,6 +20,10 @@ const routes = [
       {
         path: 'current/:q',
         element: <CurrentWeatherPage />
+      },
+      {
+        path: 'forecast/:q',
+        element: <FiveDayForecastPage />
       }
     ]
   }

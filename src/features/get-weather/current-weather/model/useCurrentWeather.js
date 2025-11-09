@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
-import { currentWeatherApi } from "../index.js";
+import { weatherApi } from "../index.js";
 
-const useCurrentWeather = (city) => {
+const useCurrentWeather = (city, to) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ const useCurrentWeather = (city) => {
     const fetchData = async () => {
       setData(null)
       try {
-        const weather = await currentWeatherApi(city)
+        const weather = await weatherApi(city, to)
         setData(weather)
       } catch (err) {
         console.error(err)
@@ -17,7 +17,7 @@ const useCurrentWeather = (city) => {
     }
 
     fetchData().then(r => (r))
-  }, [city])
+  }, [city, to])
 
   return data;
 }

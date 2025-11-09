@@ -5,8 +5,9 @@ import {useParams} from "react-router-dom";
 
 const CurrentWeatherPage = () => {
   const { q } = useParams();
-  const data = useCurrentWeather(q);
+  const data = useCurrentWeather(q, 'weather');
 
+  if (!q) return null;
   if (data?.message) return <GenericErrorMessages error={data.message} />;
   if (!data) return <Fallback />;
 
