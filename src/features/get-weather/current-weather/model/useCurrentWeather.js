@@ -4,10 +4,8 @@ import { currentWeatherApi } from "../index.js";
 const useCurrentWeather = (city) => {
   const [data, setData] = useState(null);
 
-  console.log(1)
   useEffect(() => {
     if (!city) return
-    console.log(2)
     const fetchData = async () => {
       setData(null)
       try {
