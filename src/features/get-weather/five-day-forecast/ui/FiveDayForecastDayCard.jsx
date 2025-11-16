@@ -1,4 +1,4 @@
-import { getAVG } from "@/shared/lib/getAVG.js";
+import { useAvg } from "@/shared/hooks/useAvg.js";
 
 const FiveDayForecastDayCard = ({ list }) => {
 
@@ -9,8 +9,10 @@ const FiveDayForecastDayCard = ({ list }) => {
     winds.push(Math.floor(item['wind']['speed']))
   })
 
+  const avgWindSpeed = useAvg(winds);
+
   console.log(Math.max(...temps), Math.min(...temps))
-  console.log(getAVG(winds))
+  console.log(avgWindSpeed);
 
   return null;
 };
