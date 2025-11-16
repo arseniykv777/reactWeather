@@ -11,11 +11,11 @@ const useSearchInput = () => {
       if (location.pathname === '/') return;
 
       const value = e.target.value;
-      const path = location.pathname.substring(1);
+      const path = location.pathname.substring(1).split('/')[0];
 
       clearTimeout(timeoutRef.current);
       timeoutRef.current = setTimeout(() => {
-        navigate(path + value);
+        navigate(`${path}/${value}`);
       }, 300)
     }
   };
