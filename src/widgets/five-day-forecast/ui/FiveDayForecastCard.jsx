@@ -1,28 +1,20 @@
-import {memo} from "react";
 import { FiveDayForecastDayCard } from "@/features/index.js";
+import useGroupedForecastDays from "@/entities/forecast-weather";
+import { memo } from "react";
 
 const FiveDayForecastCard = ({ forecast }) => {
-  const locale_days = {}
 
-  forecast.list.forEach(item => {
-    const date = new Date(item.dt * 1000).getDate();
-
-    if (!locale_days[date]) locale_days[date] = [];
-    locale_days[date].push(item);
-  })
-
-
-
+  const days = useGroupedForecastDays(forecast.list);
 
   return (
-    <>
-      <FiveDayForecastDayCard list={Object.values(locale_days)[0]}/>
-    </>
+    <div>
+      {days.map((day, index) => (
+        <FiveDayForecastDayCard list={days[index]} key={days[index][0].dt}/>
+      ))}
+    </div>
   )
 }
 
-const areEqual = (oldProps, newProps) => {
-  return oldProps.forecast.city.name === newProps.forecast.city.name;
-}
+const areEqual = (o, n) => (o.forecast.city.name === n.forecast.city.name)
 
 export default memo(FiveDayForecastCard, areEqual);

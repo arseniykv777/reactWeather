@@ -2,6 +2,7 @@ import { useAvg } from "@/shared/hooks/useAvg.js";
 
 const FiveDayForecastDayCard = ({ list }) => {
 
+
   const temps = [];
   const winds = [];
   list.forEach(item => {
@@ -11,10 +12,18 @@ const FiveDayForecastDayCard = ({ list }) => {
 
   const avgWindSpeed = useAvg(winds);
 
-  console.log(Math.max(...temps), Math.min(...temps))
-  console.log(avgWindSpeed);
 
-  return null;
+  return (
+    <div>
+      <div>
+        <p>{Math.max(...temps)}</p>
+      </div>
+      <div>
+        <p>{Math.min(...temps)}</p>
+      </div>
+      <p>{avgWindSpeed}</p>
+    </div>
+  );
 };
 
 export default FiveDayForecastDayCard;
