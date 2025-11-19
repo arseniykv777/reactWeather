@@ -1,0 +1,27 @@
+.card {
+  width: 200px;
+  font-size: 26px;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 16px;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  cursor: pointer;
+}
+
+.weather_img {
+  margin-inline: auto;
+  display: block;
+  width: 80px;
+}
+
+.date {
+  margin-bottom: 1rem;
+}
+
+.avg_wind {
+  margin-top: 1rem;
+}

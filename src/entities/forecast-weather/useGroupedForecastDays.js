@@ -1,14 +1,19 @@
+const useGroupedForecastDays = (forecast) => {
+  const locale_days = new Map();
 
-const useGroupedForecastDays = ( forecast ) => {
-  const locale_days = {};
   forecast.forEach(item => {
-    const date = new Date(item.dt * 1000).getDate();
+    const d = new Date(item.dt * 1000);
+    const dateString = `${d.getDate()}-${d.getMonth() + 1}`
 
-    if (!locale_days[date]) locale_days[date] = [];
-    locale_days[date].push(item);
+    if (!locale_days.has(dateString)) {
+      locale_days.set(dateString, [])
+    }
+
+    locale_days.get(dateString).push(item);
+    locale_days.get(dateString)[0].local_date_txt = dateString;
   })
 
-  return Object.values(locale_days)
+  return Array.from(locale_days.values());
 }
 
-export default useGroupedForecastDays;
+export default useGroupedForecastDays
