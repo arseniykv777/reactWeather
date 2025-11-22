@@ -1,19 +1,25 @@
 import { useCurrentWeather } from "@/features/get-weather/current-weather";
-import {  Fallback, GenericErrorMessages } from "@/shared/ui/index.js";
-import {useParams} from "react-router-dom";
-import { FiveDayForecastCard } from "@/widgets/index.js";
+import {  Fallback, GenericErrorMessages } from "@/shared/ui";
+import {useParams, Outlet} from "react-router-dom";
+import { FiveDayForecastCard } from "@/widgets";
+
 
 const FiveDayForecastPage = () => {
-  const { q } = useParams();
+  const { q, day } = useParams();
   const data = useCurrentWeather(q, 'forecast');
+  console.log(q, day)
 
-  if (!q) return null;
+  if (day !== undefined) {
+    return <Outlet />
+  }
+
+  if (!q) return <GenericErrorMessages error={'Сделайте поиск :)'} />;
   if (data?.message) return <GenericErrorMessages error={data.message} />;
   if (!data) return <Fallback />;
 
   return (
     <>
-      <FiveDayForecastCard forecast={data} />
+      <FiveDayForecastCard forecast={data}/>
     </>
   )
 }

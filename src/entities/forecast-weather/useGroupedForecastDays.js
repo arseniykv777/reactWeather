@@ -3,7 +3,13 @@ const useGroupedForecastDays = (forecast) => {
 
   forecast.forEach(item => {
     const d = new Date(item.dt * 1000);
+    const currentDate = new Date().getDate();
     const dateString = `${d.getDate()}-${d.getMonth() + 1}`
+
+    const date = d.getDate()
+    if (currentDate - date === 1) {
+      return;
+    }
 
     if (!locale_days.has(dateString)) {
       locale_days.set(dateString, [])

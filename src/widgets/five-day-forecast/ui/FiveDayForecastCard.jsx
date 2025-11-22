@@ -4,7 +4,7 @@ import { memo } from "react";
 
 import styles from './FiveDayForecastCard.module.scss';
 
-const FiveDayForecastCard = ({ forecast }) => {
+const FiveDayForecastCard = ({ forecast, toggleDayForecast }) => {
   const days = useGroupedForecastDays(forecast.list);
 
   return (
@@ -12,7 +12,7 @@ const FiveDayForecastCard = ({ forecast }) => {
       <h2 className={styles.title}>Результаты: {forecast.city.name}</h2>
       <section className={styles.all_cards}>
         {days.map((day, index) => (
-          <FiveDayForecastDayCard list={days[index]} key={days[index][0].dt}/>
+          <FiveDayForecastDayCard list={days[index]} toggleDayForecast={toggleDayForecast} key={days[index][0].dt} city={forecast.city.name}/>
         ))}
       </section>
     </>

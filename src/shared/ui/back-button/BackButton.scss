@@ -1,0 +1,13 @@
+.back-button {
+  border-radius: 16px;
+  background: rgba(0, 34, 108, 1);
+  color: white;
+  font-size: 24px;
+  border: none;
+  height: 61px;
+  padding-inline: 1rem;
+  font-weight: 500;
+  position: absolute;
+  left: calc((100vw - 1440px) / 2 - 120px);
+  cursor: pointer;
+}

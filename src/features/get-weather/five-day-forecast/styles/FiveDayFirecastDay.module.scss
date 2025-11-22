@@ -1,0 +1,23 @@
+.forecasts {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  gap: 50px;
+}
+
+.forecast {
+  border: 1px solid black;
+  border-radius: 16px;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 24px;
+
+  img {
+    width: 80px;
+  }
+}
+
+.title {
+  margin: 1.5rem 0;
+  font-size: 34px;
+  font-weight: 400;
+}

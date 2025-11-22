@@ -1,8 +1,10 @@
 import { lazy } from 'react';
+import * as path from "node:path";
 
 const App = lazy(() => import('@/app'));
 const CurrentWeatherPage = lazy(() => import('@/pages/current-weather'));
 const FiveDayForecastPage = lazy(() => import('@/pages/five-day-forecast'));
+const FiveDayForecastDay = lazy(() => import('@/features/get-weather/five-day-forecast/ui/FiveDayForecastDay.jsx'))
 
 const routes = [
   {
@@ -23,8 +25,15 @@ const routes = [
       },
       {
         path: 'forecast/:q',
-        element: <FiveDayForecastPage />
-      }
+        element: <FiveDayForecastPage />,
+        children: [
+          {
+            path: ':day',
+            element: <FiveDayForecastDay />
+          }
+
+        ]
+      },
     ]
   }
 ]

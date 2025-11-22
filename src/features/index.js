@@ -4,3 +4,4 @@ export { default as FiveDayForecastBtn } from './get-weather/five-day-forecast/u
 export { default as CurrentWeatherCardHeader } from "./get-weather/current-weather/ui/CurrentWeatherCardHeader.jsx";
 export { default as CurrentWeatherCardInfo} from "./get-weather/current-weather/ui/CurrentWeatherCardInfo.jsx";
 export { default as FiveDayForecastDayCard } from './get-weather/five-day-forecast/ui/FiveDayForecastDayCard.jsx'
+export { default as FiveDayForecastDay } from './get-weather/five-day-forecast/ui/FiveDayForecastDay.jsx';
